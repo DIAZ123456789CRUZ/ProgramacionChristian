@@ -57,5 +57,17 @@ const servicios = [
     tecnologias: ["Python", "MongoDB"]
   }
 ]
-
-
+////parte 1 definicion de reglas
+const estaActivo =(servicio)=> servicio.activo; 
+const esZonaUS =(servicio)=>servicio.zona==="us-east" || servicio.zona==="us-west";
+const consultaAlta=(servicio)=>servicio.consultasPorMinuto>=10000;
+const usaNode=servicio=>servicio.tecnologias.includes("Node");
+////parte 2 composicion de reglas
+const requiquiereMantenimiento=servicio=>servicio.activo===false && servicio.cargaAlta(servicio);
+const esServiciosCriricosUS=servicio=>servicio.activo && eszonaUS(servicio) || cargaAlta(servicio);
+const mirgrarACloudflare =servicio=>eszonaUs(servicio) && usaNode(servicio) && !cargaAlta(servicio);
+//parte 3 transformacion y metodos de orden superior
+//const serviciosCriticoUS=servicios.filter(esServiciosCriticoUS).map(servicio=>servicio.nombre); 
+console.log("Servicios Críticos US:", nombresCriticosUS);
+console.log("Requieren Mantenimiento Urgente:", nombresMantenimientoUrgente);
+console.log("Total Consultas Activos:", totalConsultasActivos); 
