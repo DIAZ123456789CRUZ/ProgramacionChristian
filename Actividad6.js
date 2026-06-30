@@ -16,6 +16,8 @@ const ids=generarIdsLayzy();
 console.log(ids.next().value);
 console.log(ids.next().value);
 console.log(ids.next().value);
+console.log(ids.next().value);
+console.log(ids.next().value);
 /*/
 2.	Ejercicio. Paginación infinita, al hacer scroll, se va cargando de 3 en 3. // --- 
 // CÓDIGO INICIAL (A TRANSFORMAR) 
@@ -36,11 +38,15 @@ const dbPosts = [
     "Post 3",
     "Post 4",
     "Post 5",
-    "Post 6"
+    "Post 6",
+    "Post 7",
+    "Post 8",
+    "Post 9"
 ];
 
 const post = obtenerFeed(dbPosts);
 
+console.log(post.next().value)
 console.log(post.next().value)
 console.log(post.next().value)
 /*/3.	Ejercicio. Buscador de errores críticos en logs de un servidor. // --- CÓDIGO INICIAL (A TRANSFORMAR) --- 
