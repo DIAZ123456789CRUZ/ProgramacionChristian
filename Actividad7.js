@@ -36,9 +36,7 @@ deepFreeze(transacciones);
 const esRetiro = t => t.tipo === "retiro";
 const esMontoSospechoso = t => t.monto >= 50000;
 const esZonaDeRiesgo = t => t.pais !== "México";
-const alertaFraude = t =>
-    esRetiro(t) &&
-    (esMontoSospechoso(t) ||esZonaDeRiesgo(t));
+const alertaFraude = t => esRetiro(t) && (esMontoSospechoso(t) ||esZonaDeRiesgo(t));
 
 function* detectarFraudes(transacciones) {
     for (const transaccion of transacciones) {
